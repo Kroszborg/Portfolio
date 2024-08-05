@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { PrismicPreview } from "@prismicio/next";
 import { createClient, repositoryName } from "@/prismicio";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react"
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
         <div className="absolute inset-0 -z-50 max-h-screen background-gradient"></div>
         <div className="absolute pointer-events-none inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
         <SpeedInsights />
+        <Analytics />
         </body>
         <PrismicPreview repositoryName={repositoryName} />
     </html>
