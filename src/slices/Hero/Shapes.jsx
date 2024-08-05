@@ -74,10 +74,11 @@ function Geometries() {
     ];
 
     const soundEffects = [
-        new Audio ('/sounds/knock1.ogg'),
-        new Audio ('/sounds/knock2.ogg'),
-        new Audio ('/sounds/knock3.ogg'),
-    ]
+      new Audio("/sounds/knock1.ogg"),
+      new Audio("/sounds/knock2.ogg"),
+      new Audio("/sounds/knock3.ogg"),
+      new Audio("/sounds/bbbsound.mp3"),
+    ];
 
 
     return geometries.map(({position, r, geometry}) => (
