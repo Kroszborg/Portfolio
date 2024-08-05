@@ -141,7 +141,7 @@ export default function ContentList({
             key={index}
             onMouseEnter={() => onMouseEnter(index)}
             className="list-item opacity-0"
-           ref={(el: HTMLLIElement | null) => (itemsRef.current[index] = el)}
+          ref={(el: HTMLLIElement | null) => { itemsRef.current[index] = el; }}
           >
             <a
               href={`${urlPrefix}/${post.uid}`}
