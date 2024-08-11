@@ -80,6 +80,8 @@ function Geometries() {
       new Audio("/sounds/bbbsound.mp3"),
     ];
 
+    soundEffects[3].volume = 0.05;
+
 
     return geometries.map(({position, r, geometry}) => (
         <Geometry
