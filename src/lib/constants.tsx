@@ -2,7 +2,7 @@ import { Section, SectionColors, Sections } from './types';
 import Home from '@/components/home';
 import Works from '@/components/works';
 import Aitriplanner from '@/assets/images/aitriplanner-cover.webp';
-import thewaitercompany from '@/assets/images/TheWaiterCompany-cover.webp';
+import thewaitercompany from '@/assets/images/thewaitercompany-cover.webp';
 import Experiences from '@/components/experiences';
 import Contact from '@/components/contact';
 
