@@ -1,45 +1,22 @@
-import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import clsx from "clsx";
-import { PrismicPreview } from "@prismicio/next";
-import { createClient, repositoryName } from "@/prismicio";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react"
+import { Roboto } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
-const urbanist = Urbanist({ subsets: ["latin"] });
+import './globals.css';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const roboto = Roboto({
+ weight: ['300', '400', '500', '700'],
+ subsets: ['latin'],
+ variable: '--font-roboto',
+});
 
-  return {
-    title: settings.data.meta_title,
-    description: settings.data.meta_desciption,
-    // openGraph: {
-    //   images: [settings.data.og_image?.url || ""],
-    // },
-  };
-}
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="bg-slate-900 text-slate-100">
-      <body className={clsx(urbanist.className, "relative min-h-screen")}>
-         <Header />
-        {children}
-        <Footer />
-        <div className="absolute inset-0 -z-50 max-h-screen background-gradient"></div>
-        <div className="absolute pointer-events-none inset-0 -z-40 h-full bg-[url('/noisetexture.jpg')] opacity-20 mix-blend-soft-light"></div>
-        <SpeedInsights />
-        <Analytics />
-        </body>
-        <PrismicPreview repositoryName={repositoryName} />
-    </html>
-  );
+ children,
+}: Readonly<{ children: React.ReactNode }>) {
+ return (
+  <html lang="en" className="h-full">
+   {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
+   <body className={`${roboto.variable} h-full`}>{children}</body>
+  </html>
+ );
 }
