@@ -1,5 +1,7 @@
 import { Roboto } from 'next/font/google';
 import { GoogleTagManager } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import './globals.css';
 
@@ -16,7 +18,11 @@ export default function RootLayout({
  return (
   <html lang="en" className="h-full">
    {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
-   <body className={`${roboto.variable} h-full`}>{children}</body>
+   <body className={`${roboto.variable} h-full`}>
+    {children}
+    <Analytics />
+    <SpeedInsights />
+    </body>
   </html>
  );
 }

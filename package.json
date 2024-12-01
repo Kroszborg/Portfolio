@@ -13,6 +13,8 @@
  },
  "dependencies": {
   "@next/third-parties": "^15.0.3",
+  "@vercel/analytics": "^1.4.1",
+  "@vercel/speed-insights": "^1.1.0",
   "abhiman-panwar-portfolio": "file:",
   "clsx": "^2.1.1",
   "framer-motion": "^11.11.9",
