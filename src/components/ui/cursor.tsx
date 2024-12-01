@@ -10,9 +10,9 @@ export default function Cursor() {
  const smallBallX = useMotionValue(0);
  const smallBallY = useMotionValue(0);
 
- const delayedBigBallX = useSpring(bigBallX, { stiffness: 150, damping: 20 });
- const delayedBigBallY = useSpring(bigBallY, { stiffness: 150, damping: 20 });
- const scale = useSpring(1, { stiffness: 150, damping: 10 });
+ const delayedBigBallX = useSpring(bigBallX, { stiffness: 200, damping: 20 });
+ const delayedBigBallY = useSpring(bigBallY, { stiffness: 200, damping: 20 });
+ const scale = useSpring(1, { stiffness: 200, damping: 10 });
  const [isClicked, setIsClicked] = useState(false);
 
  const handleMouseMove = useCallback(
